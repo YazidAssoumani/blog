@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+    <title>Créer un compte utilisateur</title>
+</head>
+<body class="body">
+    <h1>Créer un compte utilisateur</h1>
+    <div class="formulaire">
+        <section>
+            <label for="firstName">Prénom</label>
+            <input type="text" name="firstName" id="firstName">
+        </section>
+        <section>
+            <label for="lastName">Nom</label>
+            <input type="text" name="lastName" id="lastName">
+        </section>
+        <section>
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email">
+        </section>
+        <section>
+            <input type="hidden" id="user_id" name="user_id"/>
+        </section>
+        <section>
+            <input type="button" value="Ajouter" onclick="addUser()" id="btn_create" class="visible">
+            <input type="button" value="Modifier" onclick="updateUser()" id="btn_update" class="hidden">
+        </section>
+    </div>
+    <div>
+        <section id="show-users">
+            <?php foreach ($users as $key => $user): ?>
+                <div id="user_<?php echo $user['id'];?>">
+                    <span>---<?php echo $user['id'];?>---</span>
+                    <span><?php echo $user['lastName'];?></span>
+                    <span><?php echo $user['firstName'];?></span>
+                    <span>--- <?php echo $user['email'];?> ---</span>
+                    <input type='button' value='Voir' onClick='showUser(<?php echo $user['id'];?>)'>
+                    <input type='button' value='Modifier' onClick='showUser(<?php echo $user['id'];?>)'>
+                    <input type='button' value='Supprimer' onClick='deleteUser(<?php echo $user['id'];?>)'>
+                </div>
+            <?php endforeach; ?>
+        </section>
+    </div>
+
+    <script src="assets/main.js"></script>
+</body>
+</html>
