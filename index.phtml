@@ -23,25 +23,23 @@
         <section>
             <input type="hidden" id="user_id" name="user_id"/>
         </section>
-        <section>
+        <section id="bouton">
             <input type="button" value="Ajouter" onclick="addUser()" id="btn_create" class="visible">
             <input type="button" value="Modifier" onclick="updateUser()" id="btn_update" class="hidden">
         </section>
     </div>
-    <div>
-        <section id="show-users">
-            <?php foreach ($users as $key => $user): ?>
-                <div id="user_<?php echo $user['id'];?>">
-                    <span>---<?php echo $user['id'];?>---</span>
-                    <span><?php echo $user['lastName'];?></span>
-                    <span><?php echo $user['firstName'];?></span>
-                    <span>--- <?php echo $user['email'];?> ---</span>
-                    <input type='button' value='Voir' onClick='showUser(<?php echo $user['id'];?>)'>
-                    <input type='button' value='Modifier' onClick='showUser(<?php echo $user['id'];?>)'>
-                    <input type='button' value='Supprimer' onClick='deleteUser(<?php echo $user['id'];?>)'>
-                </div>
-            <?php endforeach; ?>
-        </section>
+    <div id="show-users">
+        <?php foreach ($users as $key => $user): ?>
+            <div id="user_<?php echo $user['id'];?>">
+                <span>---<?php echo $user['id'];?>---</span>
+                <span><?php echo $user['lastName'];?></span>
+                <span><?php echo $user['firstName'];?></span>
+                <span>--- <?php echo $user['email'];?> ---</span>
+                <input type='button' value='Voir' onClick='showUser(<?php echo $user['id'];?>)'>
+                <input type='button' value='Modifier' onClick='showUser(<?php echo $user['id'];?>)'>
+                <input type='button' value='Supprimer' onClick='deleteUser(<?php echo $user['id'];?>)'>
+            </div>
+        <?php endforeach; ?>
     </div>
 
     <script src="assets/main.js"></script>

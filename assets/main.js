@@ -19,9 +19,9 @@ function addUser() {
             userDescription.setAttribute("id", "user_"+userAccount.id);            
             users.insertBefore(userDescription, users.firstChild);
 
-            document.getElementById('firstName').value = '';
-            document.getElementById('lastName').value = '';
-            document.getElementById('email').value = '';
+            document.getElementById('firstName').value = null;
+            document.getElementById('lastName').value = null;
+            document.getElementById('email').value = null;
         }
     };
     var url = 'controllers/add_user.php';
@@ -86,9 +86,9 @@ function updateUser(){
             userDescription.setAttribute("id", "user_"+userAccount.id);            
             users.insertBefore(userDescription, users.firstChild);
 
-            document.getElementById('firstName').value = '';
-            document.getElementById('lastName').value = '';
-            document.getElementById('email').value = '';
+            document.getElementById('firstName').value = null;
+            document.getElementById('lastName').value = null;
+            document.getElementById('email').value = null;
         }
     };
     var url = 'controllers/update_user.php';
